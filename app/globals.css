@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Palette: soft lavender paper with deep indigo ink and a violet accent.
+  Colors are RGB channels so Tailwind can apply alpha.
+*/
+:root {
+  --bg: 235 232 247;
+  --surface: 255 255 255;
+  --ink: 43 37 96;
+  --muted: 93 86 144;
+  --line: 207 198 242;
+  --accent: 76 63 140;
+  --gold: 106 79 163;
+  --bad: 156 67 56;
+}
+
+.dark {
+  --bg: 26 22 58;
+  --surface: 38 32 82;
+  --ink: 235 232 250;
+  --muted: 175 168 215;
+  --line: 62 55 112;
+  --accent: 169 150 235;
+  --gold: 207 198 242;
+  --bad: 214 128 117;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+    overflow-x: hidden;
+    font-synthesis: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  ::selection {
+    background: rgb(var(--accent) / 0.3);
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center rounded-full bg-accent px-7 py-3.5 text-[0.92rem] font-semibold tracking-wide text-white transition-colors duration-200 hover:bg-ink dark:text-bg;
+  }
+  .link {
+    @apply font-semibold underline decoration-line decoration-2 underline-offset-[6px] transition-colors hover:decoration-accent;
+  }
+}
+
+/* ---------- Hero waves: thin lavender lines that drift slowly ---------- */
+.hero-waves svg {
+  fill: none;
+  stroke: #cfc6f2;
+  stroke-width: 0.6;
+  stroke-opacity: 0.4;
+}
+.hero-waves .rings { stroke-opacity: 0.22; }
+.hero-waves .w {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hero-waves .w1 { animation: wv-a 22s ease-in-out infinite; }
+.hero-waves .w2 { animation: wv-b 26s ease-in-out infinite; }
+.hero-waves .w3 { animation: wv-a 30s ease-in-out infinite reverse; }
+.hero-waves .rings {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wv-spin 80s linear infinite;
+}
+
+@keyframes wv-a { 50% { transform: translate(24px, 14px) scale(1.03); } }
+@keyframes wv-b { 50% { transform: translate(-22px, -12px) rotate(-1.2deg); } }
+@keyframes wv-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Marquee ---------- */
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+.group:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- Thesis pipeline connector ---------- */
+.flow {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  background: rgb(var(--line));
+}
+.flow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -24px;
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgb(var(--accent)));
+  animation: flow 2.2s linear infinite;
+  animation-delay: var(--fd, 0s);
+}
+@keyframes flow {
+  to { left: 100%; }
+}
+
+/* ---------- Custom cursor: hide the system arrow only where the ring is drawn ---------- */
+html.has-cursor,
+html.has-cursor a,
+html.has-cursor button,
+html.has-cursor label,
+html.has-cursor input[type="range"] {
+  cursor: none;
+}
+html.has-cursor input:not([type="range"]),
+html.has-cursor textarea {
+  cursor: text;
+}
