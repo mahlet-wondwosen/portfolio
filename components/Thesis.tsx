@@ -72,8 +72,8 @@ function Trajectory() {
       <text x="364" y="132" textAnchor="end" className="fill-muted text-[10px]">Team B, control: 63 to 66%</text>
       <motion.path
         d={d} fill="none" className="stroke-accent" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
-        initial={{ pathLength: 0 }}
-        whileInView={{ pathLength: 1 }}
+        initial={{ pathLength: 0 } as any}
+        whileInView={{ pathLength: 1 } as any}
         viewport={{ once: true }}
         transition={{ duration: 1.8, delay: 0.3, ease: EASE }}
       />
