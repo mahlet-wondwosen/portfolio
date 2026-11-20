@@ -12,8 +12,9 @@ export const profile = {
   timezone: "Africa/Addis_Ababa",
   email: "mahlet.wondwosen01@gmail.com",
   phone: "+251 098 407 8086",
-  linkedin: "https://linkedin.com/in/mahlet-wondwosen",
+  linkedin: "https://www.linkedin.com/in/mahlet-wondwosen/",
   linkedinLabel: "linkedin.com/in/mahlet-wondwosen",
+  github: "https://github.com/mahlet-wondwosen",
   intro:
     "I build bank and financial portals and mini-apps for Ethiopia's largest fintech, in React, Next.js and TypeScript.",
 };
