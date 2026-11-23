@@ -58,7 +58,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative scroll-mt-16 overflow-hidden bg-gradient-to-b from-[#4b3f8c] to-[#2b2560] px-5 py-24 text-white sm:py-32"
+      className="relative scroll-mt-16 overflow-hidden bg-gradient-to-b from-[#4b3f8c] to-[#2b2560] px-5 pb-12 pt-2 text-white sm:pb-16 sm:pt-2"
     >
       <motion.div
         aria-hidden="true"
@@ -74,23 +74,21 @@ export default function Contact() {
       />
 
       <div className="relative mx-auto w-[min(1240px,100%)]">
-        <div className="flex items-start justify-between gap-6">
-          <h2 className="text-[clamp(3.2rem,11vw,9rem)] font-bold leading-[0.95] tracking-[-0.035em]">
-            <SplitWords text="Let's work" />
-            <br />
-            <SplitWords text="together." delay={0.2} />
-          </h2>
+        <h2 className="text-[clamp(3.2rem,11vw,9rem)] font-bold leading-[0.95] tracking-[-0.035em]">
+          <SplitWords text="Let's work" />
+          <br />
+          <SplitWords text="together." delay={0.2} />
+        </h2>
+        <div className="mt-2 flex items-center justify-between gap-6">
+          <Reveal delay={0.2}>
+            <p className="max-w-[46ch] text-[1.15rem] leading-relaxed text-[#e6e0fa]">
+              I am looking for a fully remote, full-time frontend role. Tell me about the team and the product.
+            </p>
+          </Reveal>
           <div className="hidden shrink-0 sm:block">
             <Badge />
           </div>
         </div>
-
-        <Reveal delay={0.2}>
-          <p className="mt-8 max-w-[46ch] text-[1.15rem] leading-relaxed text-[#e6e0fa]">
-            I am looking for a fully remote, full-time frontend role. Tell me about the team and the
-            product.
-          </p>
-        </Reveal>
 
         {/* the email, large */}
         <Reveal delay={0.1} y={30}>

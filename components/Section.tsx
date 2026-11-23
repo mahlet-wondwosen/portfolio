@@ -8,14 +8,16 @@ export default function Section({
   title,
   note,
   children,
+  className,
 }: {
   id: string;
   title: string;
   note?: string;
   children: React.ReactNode;
+  className?: string;
 }) {
   return (
-    <section id={id} className="scroll-mt-16 border-t border-line px-5 py-20 sm:py-28">
+    <section id={id} className={`scroll-mt-16 border-t border-line px-5 py-20 sm:py-28 ${className ?? ""}`}>
       <div className="mx-auto w-[min(1240px,100%)]">
         <Head title={title} note={note} />
         <div className="mt-12">{children}</div>

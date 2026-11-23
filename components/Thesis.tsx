@@ -160,9 +160,52 @@ export default function Thesis() {
           </p>
         </Reveal>
 
-        <h2 className="mt-7 max-w-[16ch] text-[clamp(2.8rem,7.4vw,6.4rem)] font-bold leading-[1] tracking-[-0.03em]">
-          <SplitWords text="Scrum teams that stay in sync." />
-        </h2>
+        {/* watermark behind heading */}
+        <div className="relative">
+          <div
+            aria-hidden="true"
+            className="absolute -top-6 left-0 flex items-center gap-6 pointer-events-none"
+          >
+            {/* COIF letters */}
+            <div className="flex">
+              {["C","O","I","F"].map((l, i) => (
+                <motion.span
+                  key={l}
+                  className="select-none text-[clamp(5rem,18vw,14rem)] font-black leading-none tracking-tighter text-white/60"
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: i * 0.1, ease: EASE }}
+                >
+                  {l}
+                </motion.span>
+              ))}
+            </div>
+            {/* full words — same height as COIF, stacked equally */}
+            <div className="flex flex-col justify-between" style={{ height: "calc(clamp(5rem,18vw,14rem) / 2)" }}>
+              {[
+                "Communication",
+                "Optimization",
+                "Integration",
+                "Framework",
+              ].map((word, i) => (
+                <motion.span
+                  key={word}
+                  className="select-none text-[clamp(0.55rem,1.1vw,0.95rem)] font-bold uppercase tracking-[0.18em] text-white/30"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 + i * 0.1, ease: EASE }}
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </div>
+          </div>
+          <h2 className="relative mt-7 max-w-[16ch] text-[clamp(2.8rem,7.4vw,6.4rem)] font-bold leading-[1] tracking-[-0.03em]">
+            <SplitWords text="Scrum teams that stay in sync." />
+          </h2>
+        </div>
 
         <Reveal delay={0.15} className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <p className="max-w-[58ch] text-[1.12rem] leading-relaxed text-muted">
