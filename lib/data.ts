@@ -32,7 +32,10 @@ export const nav = [
 export const facts = [
   { k: "Role", v: "Senior Frontend Developer at EagleLion Systems Technology" },
   { k: "Experience", v: "Four years in production web applications" },
-  { k: "Education", v: "MSc, Computer Science (Software Engineering), Addis Ababa University" },
+  {
+    k: "Education",
+    v: "MSc, Computer Science (Software Engineering), Addis Ababa University",
+  },
   { k: "Location", v: "Addis Ababa, open to fully remote work" },
 ];
 
@@ -89,7 +92,10 @@ export const skillGroups = [
   {
     title: "AI-assisted development",
     note: "Faster, with review",
-    items: ["ChatGPT for coding and review", "ALX AI Augmented Professional Development"],
+    items: [
+      "ChatGPT for coding and review",
+      "ALX AI Augmented Professional Development",
+    ],
   },
 ];
 
@@ -110,44 +116,65 @@ export const projects: Project[] = [
   {
     title: "Ethio Direct",
     blurb:
-      "A financial portal built with React and Next.js, wired to banking REST APIs and released from the shared monorepo.",
-    role: "Frontend and integration layer",
-    tags: ["Next.js", "REST APIs", "Tailwind CSS"],
+      "An international remittance platform that enables Ethiopians abroad to send money to beneficiaries in Ethiopia through integrated banking and payment services.",
+    role: "Frontend development and banking API integration",
+    tags: ["React", "Next.js", "REST APIs", "Fintech"],
   },
   {
     title: "CBRS Ethiopia",
     blurb:
-      "A bank portal developed alongside the other apps in the monorepo, kept stable across concurrent releases.",
-    role: "Frontend and integration layer",
-    tags: ["React", "Turborepo", "CI/CD"],
+      "A Cross-Border Remittance System designed to facilitate international money transfers, connecting remittance partners with local banking and payment infrastructure in Ethiopia.",
+    role: "Frontend development and remittance integration",
+    tags: ["React", "TypeScript", "REST APIs", "Remittance"],
   },
   {
     title: "StarPayEvent",
     blurb:
-      "A financial product built on the shared component and package architecture used across the fintech's apps.",
-    role: "Frontend and integration layer",
-    tags: ["Next.js", "TypeScript", "Shared packages"],
+      "An event and payment platform that brings together event-related services, registration, and digital payment processing.",
+    role: "Frontend development and payment integration",
+    tags: ["Next.js", "TypeScript", "Payment Gateway", "REST APIs"],
   },
   {
-    title: "Dashen Branch",
+    title: "Dashen Branch Portal",
     blurb:
-      "A branch-facing portal, built with backend, QA and platform teams and troubleshot for integration and performance issues.",
-    role: "Frontend and integration layer",
-    tags: ["React", "QA", "REST APIs"],
+      "A banking operations portal that enables branch employees to manage merchant onboarding, QR code services, and branch-level workflows with approval processes.",
+    role: "Frontend development and banking API integration",
+    tags: ["React", "TypeScript", "Banking", "REST APIs"],
   },
   {
-    title: "Central Portals",
+    title: "Dashen Central Portals",
     blurb:
-      "Central banking portal work across interconnected products in a multi-stakeholder production environment.",
-    role: "Frontend and integration layer",
-    tags: ["Next.js", "Performance", "Integration"],
+      "Centralized banking administration portals for managing digital banking services, configurations, transaction rules, service settings, and operational approval workflows.",
+    role: "Frontend development and system integration",
+    tags: ["React", "Next.js", "TypeScript", "Banking"],
   },
   {
-    title: "Connect Ethiopia",
+    title: "CBE Connect",
     blurb:
-      "A mini-app that runs inside the Dashen Super App, sharing the same monorepo, components and release process.",
-    role: "Frontend and integration layer",
-    tags: ["Mini-app", "React", "Tailwind CSS"],
+      "A digital financial services platform connecting customers with banking and cross-border financial services, including digital wallet and money transfer capabilities.",
+    role: "Frontend development and financial API integration",
+    tags: ["React", "Next.js", "REST APIs", "Fintech"],
+  },
+  {
+    title: "Three Click E-commerce Mini App",
+    blurb:
+      "An integrated shopping experience within the Dashen Super App, enabling customers to discover products, browse merchant catalogs, place orders, and make digital payments.",
+    role: "Mini-app frontend development and integration",
+    tags: ["React", "Next.js", "Mini-app", "E-commerce"],
+  },
+  {
+    title: "Three Click Event Mini App",
+    blurb:
+      "An event discovery and engagement mini app within the Dashen Super App, allowing customers to explore events, access event services, and complete related transactions.",
+    role: "Mini-app frontend development and integration",
+    tags: ["React", "Next.js", "Mini-app", "Event Management"],
+  },
+  {
+    title: "Three Click Donation Mini App",
+    blurb:
+      "A digital donation mini app integrated into the Dashen Super App, connecting customers with fundraising campaigns and enabling convenient digital contributions.",
+    role: "Mini-app frontend development and integration",
+    tags: ["React", "Next.js", "Mini-app", "Digital Payments"],
   },
 ];
 
@@ -201,20 +228,26 @@ export const education = [
     degree: "MSc, Computer Science (Software Engineering)",
     school: "Addis Ababa University",
     detail:
-      "Thesis: a framework to optimize communication in distributed Scrum teams. Designed and evaluated an event-driven middleware layer with latency SLOs, exactly-once delivery, retry and dead-letter recovery, and full observability (tracing, metrics, structured logs). Validated across two distributed teams with statistically significant reliability and delivery-time gains.",
+      "Thesis: A Framework for Optimizing Communication Practices and Tool Usage in Distributed Scrum Teams. Designed and evaluated an event-driven middleware architecture using Node.js, Express, MongoDB, and NATS JetStream, focusing on reliable message delivery, fault recovery, performance monitoring, and communication efficiency. Evaluated the framework across distributed Scrum teams through a multi-sprint empirical study.",
   },
   {
     period: "Jan 2019 to Jul 2023",
     degree: "BSc, Electrical and Computer Engineering",
     school: "Dire Dawa University",
-    detail: "Computer Engineering.",
+    detail:
+      "Specialized in Computer Engineering, developing a strong foundation in software development, computer systems, networking, database management, and hardware-software integration. Actively participated in the university's ICT Club, engaging in technology-related activities, collaborative learning, knowledge sharing, and practical technical projects. Graduated with a CGPA of 3.43/4.00.",
   },
 ];
 
 export const certs = [
   { name: "AI Augmented Professional Development Skills, ALX", when: "2024" },
+  {
+    name: "Project Management Certificate, Addis Ababa University",
+    when: "Sep 20, 2026",
+  },
   { name: "Cloud Computing Primer: SaaS, Coursera / Codio", when: "Feb 2025" },
   { name: "React.js: The Complete Course for Beginners, Udemy", when: "2022" },
   { name: "Docker Course for Beginners, Udemy", when: "2022" },
   { name: "Swagger API Documentation with Node.js, Udemy", when: "2022" },
 ];
+
